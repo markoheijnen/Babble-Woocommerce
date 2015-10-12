@@ -30,7 +30,7 @@ class Babble_Woocommerce {
 
 	public function __contruct() {
 		add_filter( 'bbl_translated_taxonomy', array( $this, 'bbl_translated_taxonomy' ), 10, 2 );
-		add_filter( 'bbl_translated_meta_fields', 'bbl_translated_meta_fields', 10, 2 );
+		add_filter( 'bbl_translated_meta_fields', array( $this, 'bbl_translated_meta_fields' ), 10, 2 );
 	}
 
 
@@ -41,6 +41,7 @@ class Babble_Woocommerce {
 	}
 
 	public function bbl_translated_meta_fields( array $fields, WP_Post $post ) {
+		$fields['_purchase_note'] = new Babble_Meta_Field_Textarea( $post, '_purchase_note', _x( 'Purchase Note', 'Woocommerce plugin meta field', 'babble-woocommerce' ) );
 
 		return $fields;
 	}
