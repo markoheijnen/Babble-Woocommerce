@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: Babble Woocommerce
+Plugin Name: Babble WooCommerce
 Plugin URI:  https://markoheijnen.com
-Description: Multilingual WordPress done right for Woocommerce
+Description: Multilingual WordPress done right for WooCommerce
 Version:     1.0
 Author:      Marko Heijnen
 Author URI:  https://markoheijnen.com
 Text Domain: babble-woocommerce
 Domain Path: /languages/
-License:     GPL v2 or later
+License:     GPLv2 or later
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-class Babble_Woocommerce {
+class Babble_WooCommerce {
 
 	public function __contruct() {
 		add_filter( 'bbl_translated_taxonomy', array( $this, 'bbl_translated_taxonomy' ), 10, 2 );
@@ -48,4 +48,4 @@ class Babble_Woocommerce {
 
 }
 
-new Babble_Woocommerce;
+new Babble_WooCommerce;
