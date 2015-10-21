@@ -28,14 +28,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 class Babble_WooCommerce {
 
-	public function __contruct() {
+	public function __construct() {
 		add_filter( 'bbl_translated_taxonomy', array( $this, 'bbl_translated_taxonomy' ), 10, 2 );
 		add_filter( 'bbl_translated_meta_fields', array( $this, 'bbl_translated_meta_fields' ), 10, 2 );
 	}
 
-
 	public function bbl_translated_taxonomy( $translated, $taxonomy ) {
-		if ( 'product_type' == $taxonomy ) {
+		if ( 'product_type' === $taxonomy ) {
 			return false;
 		}
 	}
